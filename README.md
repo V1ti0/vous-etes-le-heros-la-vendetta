@@ -8,4 +8,6 @@
 
 **Palette de couleurs**: [coolors.co](https://coolors.co/palette/000814-001d3d-003566-ffc300-ffd60a)
 
+## Diagramme
+
 ![diagramme](/zhuravlev_viktor_PS1_582-324MO/assets/drawio/schema-2)
