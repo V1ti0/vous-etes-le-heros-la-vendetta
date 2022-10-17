@@ -52,6 +52,7 @@ html {
     display: flex;
     justify-content: space-between;
     width: 80%;
+    
 }
 
 .option {
@@ -60,8 +61,10 @@ html {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     border-radius: 10px;
+    
 }
 
 .option:hover {
     background-color: #ce9e00;
+    cursor: pointer;
 }
