@@ -27,7 +27,7 @@ let chaptersObj = {
 
     silenceCalciago: {
         subtitle: " Ne rien dire à propos de Calciago",
-        text: "trouvant votre silence supsicieux, les membres de votre équipes finient par vous accuser. Ne savant pas qui choisir entre vous et Calciago, ils vous tueunt tout les deux",
+        text: "Trouvant votre silence supsicieux, les membres de votre équipes finient par vous accuser. Ne savant pas qui choisir entre vous et Calciago, ils vous tueunt tout les deux",
         img: "assets/images/main_page.png",
         options: {
             option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
@@ -105,4 +105,7 @@ let chaptersObj = {
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["subtitle"])
     console.log(chaptersObj[chapterName]["text"])
+    document.querySelector("subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
+    document.querySelector("text").innerHTML=chaptersObj[chapterName]["text"]
 }
+
