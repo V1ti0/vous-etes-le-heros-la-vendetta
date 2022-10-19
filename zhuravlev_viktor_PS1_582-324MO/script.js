@@ -107,9 +107,9 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["text"])
     document.querySelector(".subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
     document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"]
-    document.querySelector(".main").innerHTML= '<img src="'+chaptersObj[chapterName]["img"]+'­>"';
+    document.querySelector(".main").src= chaptersObj[chapterName]["img"];
     document.querySelector(".option").innerHTML=chaptersObj[chapterName]["option"].forEach(function(option) {
-        console.log(option)
+        console.log(option);
       });
 }
 
