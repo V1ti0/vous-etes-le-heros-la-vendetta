@@ -99,8 +99,16 @@ function goToChapter(chapterName) {
     document.querySelector(".subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
     document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"]
     document.querySelector(".main").src= chaptersObj[chapterName]["img"];
-    document.querySelector(".option").innerHTML=chaptersObj[chapterName]["option"].forEach(function(options) {
-        console.log(options);
-      });
+    document.querySelector(".option").innerHTML = ""
+     
+    for(i in chapterObj[chapterName].options) {
+        const button = document.createElement("button");
+        button.setAttribute("class", "button");
+        button.setAttribute("onclick",  chaptersObj[chapterName].option[i].action);
+        const buttonText = document.createTextNode(chaptersObj[chapterName].option[i].text);
+        button.appendChild(buttonText);
+        const daddy = document.querySelector(".buttons");
+        daddy.appendChild(button);
+    }
 }
 
