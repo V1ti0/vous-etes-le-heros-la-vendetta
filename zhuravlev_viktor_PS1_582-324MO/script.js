@@ -3,101 +3,92 @@ let chaptersObj = {
         subtitle: "introduction",
         text: " Vous êtes un boss de mafia nommé: Stalionio. Vous faites partie d'une organisation du nom de Torrac. La nuit précédente, un des cinqs autres membres a été assassiné dans une location seulement connue par votre équipe. Il est évident que l'un des membres de l'équipe est un imposteur et c'est à vous de le trouver durant la rencontre à la rencontre à la table ronde.",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
-            option2: { optionText: "Accuser Appasiliarco", action: "goToChapter('appasiliarco')" },
-            option3: { optionText: "Accuser Fiangaso", action: "goToChapter('fiangaso')" },
-        }
+        options: [
+           { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
+           { optionText: "Accuser Appasiliarco", action: "goToChapter('appasiliarco')" },
+           { optionText: "Accuser Fiangaso", action: "goToChapter('fiangaso')" },
+        ]
     },
     calciago: {
         subtitle: "Calciago",
         text: "Vous ne lui avez jamais fait confiance, car il ne vous a jamais plu. Il dit qu'il était chez Fiordisaggio, mais vous le ne croyez pas",
         img: "assets/images/main_page.png",
-        options: {
-            option1: {
-                optionText: "Ne rien dire",
-                action: "goToChapter('silenceCalciago')"
-            },
-            option2: {
-                optionText: "L'accuser",
-                action: "goToChapter('accuserCalciago')"
-            }
-        },
+        options: [
+            {optionText: "Ne rien dire", action: "goToChapter('silenceCalciago')"},
+            {optionText: "L'accuser", action: "goToChapter('accuserCalciago')"},
+        ]
     },
 
     silenceCalciago: {
         subtitle: " Ne rien dire à propos de Calciago",
         text: "Trouvant votre silence supsicieux, les membres de votre équipes finient par vous accuser. Ne savant pas qui choisir entre vous et Calciago, ils vous tueunt tout les deux",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
-        }
+        options: [
+            { optionText: "Recommencer", action: "goToChapter('intro')" }
+        ]
     },
     accuserCalciago: {
         subtitle: "Accuser Calciago",
         text: "Les membres de l'équipe vous tuent, car ils trouvent l'accusation trop bizarre et brusque. Vous recevez cependant un papier contenant le code de la caméra de sécurité grâce à votre sacrifice, ce qui vous sera utile dans vos prochaines manches.",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
-        }
+        options: [
+            { optionText: "Recommencer", action: "goToChapter('intro')" }
+        ]
     },
 
     appasiliarco: {
         subtitle: "Appasiliarco",
         text: "C'est la personne en qui vous avez le plus confiance dans votre équipe. Par contre, il était la dernière personne à visité votre compagnon mort. Soudainement, une idée vous traverse l'esprit. Vous proposez de voir la caméra de surveillance, mais celle-ci à besoin d'un code de sécurité. Avez-vous le code?",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Oui", action: "goToChapter('code')" },
-            option2: { optionText: "Non", action: "goToChapter('pasCode')" }
-        }
+        options: [
+            { optionText: "Oui", action: "goToChapter('code')" },
+            { optionText: "Non", action: "goToChapter('pasCode')" }
+        ]
     },
 
     code: {
         subtitle: "Vous avez le code",
         text: " Les caméras montrent qu'Appasiliarco est allé dans la chambre du camarade mort en colère et en panique. Il se fait exécuté et votre camarade fut vengé.",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
-        }
+        options: [
+            { optionText: "Recommencer", action: "goToChapter('intro')" }
+        ]
     },
 
     pasCode: {
         subtitle: "Vous n'avez pas le code",
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que vous avez inventer l'excuse des caméras sachant que personne ne possédait le code d'accès. Il finissent par vous éxecuter.",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
-        }
+        options: [
+            { optionText: "Recommencer", action: "goToChapter('intro')" }
+        ]
     },
 
     fiangaso: {
         subtitle: "Fiangaso",
         text: "Vous êtes neutre envers lui, mais après quelques recherches, vous trouvez l'arme qui a tué votre camarade dans sa chambre. Avertir les autres?",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
-            option2: {
-                optionText: "Non",
-                action: "goToChapter('pasFiangaso')"
-            }
-        }
+        options: [
+            { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
+            { optionText: "Non", action: "goToChapter('pasFiangaso')"}
+        ]
     },
     accuserFiangaso: {
         subtitle: "Vous accusez Fiangaso",
         text: "Vous accusez Fiangaso, mais celui-ci propose de regarder les caméras pour prouvez qu'il était innocent. Cependant, les caméras demandent un code de sécurité. Avez vous le code?",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Oui", action: "goToChapter('code')" },
-            option2: { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
-        }
+        options: [
+             { optionText: "Oui", action: "goToChapter('code')" },
+             { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
+        ]
     },
     pasCodeFiangaso: {
         subtitle: "Vous n'avez pas le code",
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que l'arme était un prétext pour tourner les soupsons contre Fiangaso. Il finissent par vous éxecuter.",
         img: "assets/images/main_page.png",
-        options: {
-            option1: { optionText: "Recommencer", action: "goToChapter('intro')" }
-        }
+        options: [
+            { optionText: "Recommencer", action: "goToChapter('intro')" }
+        ]
     },
 
 }
@@ -108,8 +99,8 @@ function goToChapter(chapterName) {
     document.querySelector(".subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
     document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"]
     document.querySelector(".main").src= chaptersObj[chapterName]["img"];
-    document.querySelector(".option").innerHTML=chaptersObj[chapterName]["option"].forEach(function(option) {
-        console.log(option);
+    document.querySelector(".option").innerHTML=chaptersObj[chapterName]["option"].forEach(function(options) {
+        console.log(options);
       });
 }
 
