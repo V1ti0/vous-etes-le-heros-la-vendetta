@@ -67,10 +67,10 @@ let chaptersObj = {
     fiangaso: {
         subtitle: "Fiangaso",
         text: "Vous êtes neutre envers lui, mais après quelques recherches, vous trouvez l'arme qui a tué votre camarade dans sa chambre. Avertir les autres?",
-        img: "fiangaso.png",
+        img: "fiangaso.jpg",
         options: [
             { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
-            { optionText: "Non", action: "goToChapter('pasFiangaso')"}
+            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')"}
         ]
     },
     accuserFiangaso: {
@@ -98,7 +98,7 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["text"])
     document.querySelector(".subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
     document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"]
-    document.querySelector(".main").src= chaptersObj[chapterName]["img"];
+    document.querySelector(".main").src= 'assets/images/'+ chaptersObj[chapterName]["img"];
     document.querySelector(".buttons").innerHTML = ""
      
     for(i in chaptersObj[chapterName].options) {
