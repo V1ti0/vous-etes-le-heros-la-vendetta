@@ -32,7 +32,7 @@ let chaptersObj = {
         text: "Les membres de l'équipe vous tuent, car ils trouvent l'accusation trop bizarre et brusque. Vous recevez cependant un papier contenant le code de la caméra de sécurité grâce à votre sacrifice, ce qui vous sera utile dans vos prochaines manches.",
         img: "assets/images/main_page.png",
         options: [
-            { optionText: "Recommencer", action: "goToChapter('intro')" }
+            { optionText: "Recommencer", action: "cat()" }
         ]
     },
 
@@ -116,5 +116,6 @@ let codeFound = false;
 
 function cat(){
     codeFound = true;
+    goToChapter("intro")
 }
 
