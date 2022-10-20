@@ -12,7 +12,7 @@ let chaptersObj = {
     calciago: {
         subtitle: "Calciago",
         text: "Vous ne lui avez jamais fait confiance, car il ne vous a jamais plu. Il dit qu'il était chez Fiordisaggio, mais vous le ne croyez pas",
-        img: "main_page.png",
+        img: "calciago.jpg",
         options: [
             {optionText: "Ne rien dire", action: "goToChapter('silenceCalciago')"},
             {optionText: "L'accuser", action: "goToChapter('accuserCalciago')"},
@@ -22,7 +22,7 @@ let chaptersObj = {
     silenceCalciago: {
         subtitle: " Ne rien dire à propos de Calciago",
         text: "Trouvant votre silence supsicieux, les membres de votre équipes finient par vous accuser. Ne savant pas qui choisir entre vous et Calciago, ils vous tueunt tout les deux",
-        img: "main_page.png",
+        img: "execution.png",
         options: [
             { optionText: "Recommencer", action: "goToChapter('intro')" }
         ]
@@ -30,7 +30,7 @@ let chaptersObj = {
     accuserCalciago: {
         subtitle: "Accuser Calciago",
         text: "Les membres de l'équipe vous tuent, car ils trouvent l'accusation trop bizarre et brusque. Vous recevez cependant un papier contenant le code de la caméra de sécurité grâce à votre sacrifice, ce qui vous sera utile dans vos prochaines manches.",
-        img: "main_page.png",
+        img: "execution.png",
         options: [
             { optionText: "Recommencer", action: "cat()" }
         ]
@@ -39,7 +39,7 @@ let chaptersObj = {
     appasiliarco: {
         subtitle: "Appasiliarco",
         text: "C'est la personne en qui vous avez le plus confiance dans votre équipe. Par contre, il était la dernière personne à visité votre compagnon mort. Soudainement, une idée vous traverse l'esprit. Vous proposez de voir la caméra de surveillance, mais celle-ci à besoin d'un code de sécurité. Avez-vous le code?",
-        img: "main_page.png",
+        img: "appasiliarco.jpg",
         options: [
             { optionText: "Oui", action: "codeCam()" },
             { optionText: "Non", action: "goToChapter('pasCode')" }
@@ -57,8 +57,8 @@ let chaptersObj = {
 
     pasCode: {
         subtitle: "Vous n'avez pas le code",
-        text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que vous avez inventer l'excuse des caméras sachant que personne ne possédait le code d'accès. Il finissent par vous éxecuter.",
-        img: "main_page.png",
+        text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que vous avez inventer l'excuse des caméras sachant que personne ne possédait le code d'accès. Ils finissent par vous éxecuter.",
+        img: "execution.png",
         options: [
             { optionText: "Recommencer", action: "goToChapter('intro')" }
         ]
@@ -67,7 +67,7 @@ let chaptersObj = {
     fiangaso: {
         subtitle: "Fiangaso",
         text: "Vous êtes neutre envers lui, mais après quelques recherches, vous trouvez l'arme qui a tué votre camarade dans sa chambre. Avertir les autres?",
-        img: "main_page.png",
+        img: "fiangaso.png",
         options: [
             { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
             { optionText: "Non", action: "goToChapter('pasFiangaso')"}
@@ -76,7 +76,7 @@ let chaptersObj = {
     accuserFiangaso: {
         subtitle: "Vous accusez Fiangaso",
         text: "Vous accusez Fiangaso, mais celui-ci propose de regarder les caméras pour prouvez qu'il était innocent. Cependant, les caméras demandent un code de sécurité. Avez vous le code?",
-        img: "main_page.png",
+        img: "proposer.png",
         options: [
              { optionText: "Oui", action: "codeCam()" },
              { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
@@ -85,7 +85,7 @@ let chaptersObj = {
     pasCodeFiangaso: {
         subtitle: "Vous n'avez pas le code",
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que l'arme était un prétext pour tourner les soupsons contre Fiangaso. Il finissent par vous éxecuter.",
-        img: "main_page.png",
+        img: "execution.png",
         options: [
             { optionText: "Recommencer", action: "goToChapter('intro')" }
         ]
