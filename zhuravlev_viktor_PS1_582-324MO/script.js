@@ -41,7 +41,7 @@ let chaptersObj = {
         text: "C'est la personne en qui vous avez le plus confiance dans votre équipe. Par contre, il était la dernière personne à visité votre compagnon mort. Soudainement, une idée vous traverse l'esprit. Vous proposez de voir la caméra de surveillance, mais celle-ci à besoin d'un code de sécurité. Avez-vous le code?",
         img: "assets/images/main_page.png",
         options: [
-            { optionText: "Oui", action: "goToChapter('code')" },
+            { optionText: "Oui", action: "codeCam()" },
             { optionText: "Non", action: "goToChapter('pasCode')" }
         ]
     },
@@ -78,7 +78,7 @@ let chaptersObj = {
         text: "Vous accusez Fiangaso, mais celui-ci propose de regarder les caméras pour prouvez qu'il était innocent. Cependant, les caméras demandent un code de sécurité. Avez vous le code?",
         img: "assets/images/main_page.png",
         options: [
-             { optionText: "Oui", action: "goToChapter('code')" },
+             { optionText: "Oui", action: "codeCam()" },
              { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
         ]
     },
@@ -119,3 +119,10 @@ function cat(){
     goToChapter("intro")
 }
 
+function codeCam(){
+    if(codeFound==true){
+        goToChapter("code")
+    }else{
+        goToChapter("pasCode")
+    }
+}

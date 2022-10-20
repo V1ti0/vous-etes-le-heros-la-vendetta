@@ -44,7 +44,7 @@ html {
 }
 
 .main {
-    width: 20vw;
+    min-width: 20vw;
     padding-bottom: 40px;
 }
 
