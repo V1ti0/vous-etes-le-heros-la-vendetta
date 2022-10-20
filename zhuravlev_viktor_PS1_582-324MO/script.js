@@ -114,5 +114,7 @@ function goToChapter(chapterName) {
 
 let codeFound = false;
 
-function cat()
+function cat(){
+    codeFound = true;
+}
 
