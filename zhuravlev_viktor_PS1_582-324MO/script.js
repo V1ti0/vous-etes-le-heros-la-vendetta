@@ -46,7 +46,8 @@ let chaptersObj = {
         ]
     },
 
-    code: {
+
+    hasCode: {
         subtitle: "Vous avez le code",
         text: " Les caméras montrent qu'Appasiliarco est allé dans la chambre du camarade mort en colère et en panique. Il se fait exécuté et votre camarade fut vengé.",
         img: "main_page.png",
@@ -107,7 +108,7 @@ function goToChapter(chapterName) {
     audio.play();
 
     localStorage.setItem("name", [chapterName]);
-
+    localStorage.getItem("Code", false);
 
 
     if (chaptersObj[chapterName]["video"]) {
@@ -136,12 +137,13 @@ let codeFound = Boolean("Code", false);
 function cat() {
     localStorage.setItem("Code", true);
     codeFound = Boolean("Code");
-    goToChapter("intro")
+    goToChapter("intro");
 }
 
 function codeCam() {
     if (codeFound == true) {
-        goToChapter("code")
+        goToChapter("hasCode")
+        localStorage.clear();
     } else {
         goToChapter("pasCode")
     }
@@ -158,5 +160,7 @@ function start() {
         goToChapter("intro")
     }
 }
+
+
 
 start()
