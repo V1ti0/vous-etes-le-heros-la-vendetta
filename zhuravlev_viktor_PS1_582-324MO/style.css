@@ -45,15 +45,22 @@ html {
 
 .main {
     min-width: 20vw;
-max-width: 300px;
+    max-width: 300px;
     padding-bottom: 40px;
+}
+
+img {
+    max-width: 300px;
+}
+
+video {
+    max-width: 300px;
 }
 
 .buttons {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    
 }
 
 .option {
@@ -62,11 +69,14 @@ max-width: 300px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 30px;
     border-radius: 10px;
-    transition: background-color 0.25s ease-out 
+    transition: background-color 0.25s ease-out
 }
 
 .option:hover {
     background-color: #ce9e00;
     cursor: pointer;
-    
+}
+
+.video {
+    display: none;
 }

@@ -100,8 +100,16 @@ function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["text"])
     document.querySelector(".subtitle").innerHTML = chaptersObj[chapterName]["subtitle"]
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"]
-    document.querySelector(".main").src = 'assets/images/' + chaptersObj[chapterName]["img"];
+
     document.querySelector(".buttons").innerHTML = ""
+
+    if (chaptersObj[chapterName]["video"]) {
+        document.querySelector(".main").innerHTML = `<video src="assets/images/` + chaptersObj[chapterName]['video'] + `" loop muted autoplay></video>`;
+    } else {
+        document.querySelector(".main").innerHTML = `<img src="assets/images/` + chaptersObj[chapterName]["img"] + `">`;
+    }
+
+
 
     for (i in chaptersObj[chapterName].options) {
         const button = document.createElement("button");
@@ -112,6 +120,8 @@ function goToChapter(chapterName) {
         const daddy = document.querySelector(".buttons");
         daddy.appendChild(button);
     }
+
+
 }
 
 let codeFound = false;
@@ -128,3 +138,9 @@ function codeCam() {
         goToChapter("pasCode")
     }
 }
+
+function start() {
+    goToChapter("intro")
+}
+
+start()
