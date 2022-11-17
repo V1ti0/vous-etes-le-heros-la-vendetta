@@ -98,13 +98,17 @@ let chaptersObj = {
 
 
 function goToChapter(chapterName) {
-    console.log(chaptersObj[chapterName]["subtitle"])
-    console.log(chaptersObj[chapterName]["text"])
-    document.querySelector(".subtitle").innerHTML = chaptersObj[chapterName]["subtitle"]
-    document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"]
-    document.querySelector(".buttons").innerHTML = ""
+    console.log(chaptersObj[chapterName]["subtitle"]);
+    console.log(chaptersObj[chapterName]["text"]);
+    document.querySelector(".subtitle").innerHTML = chaptersObj[chapterName]["subtitle"];
+    document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
+    document.querySelector(".buttons").innerHTML = "";
     var audio = new Audio('assets/images/fx.mp3');
     audio.play();
+
+    localStorage.setItem("name", [chapterName]);
+
+
 
     if (chaptersObj[chapterName]["video"]) {
         document.querySelector(".main").innerHTML = `<video src="assets/images/` + chaptersObj[chapterName]['video'] + `" loop muted autoplay></video>`;
@@ -127,7 +131,6 @@ function goToChapter(chapterName) {
 
 }
 
-
 let codeFound = false;
 
 function cat() {
@@ -143,8 +146,16 @@ function codeCam() {
     }
 }
 
+let endChapter = localStorage.getItem("name")
+
+
+
 function start() {
-    goToChapter("intro")
+    if (endChapter !== "intro") {
+        goToChapter(endChapter)
+    } else {
+        goToChapter("intro")
+    }
 }
 
 start()
