@@ -108,7 +108,6 @@ function goToChapter(chapterName) {
     audio.play();
 
     localStorage.setItem("name", [chapterName]);
-    localStorage.getItem("Code", false);
 
 
     if (chaptersObj[chapterName]["video"]) {
@@ -132,16 +131,16 @@ function goToChapter(chapterName) {
 
 }
 
-let codeFound = Boolean("Code", false);
+let codeFound = localStorage.setItem("Code", "false");
 
 function cat() {
-    localStorage.setItem("Code", true);
-    codeFound = Boolean("Code");
+    localStorage.setItem("Code", "true");
     goToChapter("intro");
 }
 
 function codeCam() {
-    if (codeFound == true) {
+    codeFound = localStorage.getItem("Code");
+    if (codeFound == "true") {
         goToChapter("hasCode")
         localStorage.clear();
     } else {
