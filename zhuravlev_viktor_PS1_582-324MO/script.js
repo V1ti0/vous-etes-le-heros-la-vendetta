@@ -1,7 +1,7 @@
 let chaptersObj = {
     intro: {
         subtitle: "introduction",
-        text: " Vous êtes un boss de mafia nommé: Stalionio. Vous faites partie d'une organisation du nom de Torrac. La nuit précédente, un des cinqs autres membres a été assassiné dans une location seulement connue par votre équipe. Il est évident que l'un des membres de l'équipe est un imposteur et c'est à vous de le trouver durant la rencontre à la rencontre à la table ronde.",
+        text: " Vous êtes un boss de mafia nommé: Stalionio. Vous faites partie d'une organisation du nom de Torrac. La nuit précédente, un des cinqs autres membres a été assassiné dans une location seulement connue par votre équipe. Il est évident que l'un des membres de l'équipe est un imposteur et c'est à vous de le trouver durant la rencontre à la table ronde.",
         img: "main_page.png",
         options: [
             { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
@@ -82,11 +82,11 @@ let chaptersObj = {
         img: "proposer.png",
         options: [
             { optionText: "Oui", action: "codeCam()" },
-            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
+            { optionText: "Non", action: "goToChapter('pasCode')" }
         ]
     },
     pasCodeFiangaso: {
-        subtitle: "Vous n'avez pas le code",
+        subtitle: "Silence mortel",
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que l'arme était un prétext pour tourner les soupsons contre Fiangaso. Il finissent par vous éxecuter.",
         img: "execution.png",
         options: [
@@ -159,7 +159,5 @@ function start() {
         goToChapter("intro")
     }
 }
-
-
 
 start()
