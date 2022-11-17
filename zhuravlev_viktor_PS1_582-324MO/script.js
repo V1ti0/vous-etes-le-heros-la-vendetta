@@ -4,9 +4,9 @@ let chaptersObj = {
         text: " Vous êtes un boss de mafia nommé: Stalionio. Vous faites partie d'une organisation du nom de Torrac. La nuit précédente, un des cinqs autres membres a été assassiné dans une location seulement connue par votre équipe. Il est évident que l'un des membres de l'équipe est un imposteur et c'est à vous de le trouver durant la rencontre à la rencontre à la table ronde.",
         img: "main_page.png",
         options: [
-           { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
-           { optionText: "Accuser Appasiliarco", action: "goToChapter('appasiliarco')" },
-           { optionText: "Accuser Fiangaso", action: "goToChapter('fiangaso')" },
+            { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
+            { optionText: "Accuser Appasiliarco", action: "goToChapter('appasiliarco')" },
+            { optionText: "Accuser Fiangaso", action: "goToChapter('fiangaso')" },
         ]
     },
     calciago: {
@@ -14,8 +14,8 @@ let chaptersObj = {
         text: "Vous ne lui avez jamais fait confiance, car il ne vous a jamais plu. Il dit qu'il était chez Fiordisaggio, mais vous le ne croyez pas",
         img: "calciago.jpg",
         options: [
-            {optionText: "Ne rien dire", action: "goToChapter('silenceCalciago')"},
-            {optionText: "L'accuser", action: "goToChapter('accuserCalciago')"},
+            { optionText: "Ne rien dire", action: "goToChapter('silenceCalciago')" },
+            { optionText: "L'accuser", action: "goToChapter('accuserCalciago')" },
         ]
     },
 
@@ -50,6 +50,7 @@ let chaptersObj = {
         subtitle: "Vous avez le code",
         text: " Les caméras montrent qu'Appasiliarco est allé dans la chambre du camarade mort en colère et en panique. Il se fait exécuté et votre camarade fut vengé.",
         img: "main_page.png",
+        video: "sunrise.mp4",
         options: [
             { optionText: "Recommencer", action: "goToChapter('intro')" }
         ]
@@ -59,6 +60,7 @@ let chaptersObj = {
         subtitle: "Vous n'avez pas le code",
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que vous avez inventer l'excuse des caméras sachant que personne ne possédait le code d'accès. Ils finissent par vous éxecuter.",
         img: "execution.png",
+        video: "execution_video.mp4",
         options: [
             { optionText: "Recommencer", action: "goToChapter('intro')" }
         ]
@@ -70,7 +72,7 @@ let chaptersObj = {
         img: "fiangaso.jpg",
         options: [
             { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
-            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')"}
+            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
         ]
     },
     accuserFiangaso: {
@@ -78,8 +80,8 @@ let chaptersObj = {
         text: "Vous accusez Fiangaso, mais celui-ci propose de regarder les caméras pour prouvez qu'il était innocent. Cependant, les caméras demandent un code de sécurité. Avez vous le code?",
         img: "proposer.png",
         options: [
-             { optionText: "Oui", action: "codeCam()" },
-             { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
+            { optionText: "Oui", action: "codeCam()" },
+            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
         ]
     },
     pasCodeFiangaso: {
@@ -96,15 +98,15 @@ let chaptersObj = {
 function goToChapter(chapterName) {
     console.log(chaptersObj[chapterName]["subtitle"])
     console.log(chaptersObj[chapterName]["text"])
-    document.querySelector(".subtitle").innerHTML=chaptersObj[chapterName]["subtitle"]
-    document.querySelector(".text").innerHTML=chaptersObj[chapterName]["text"]
-    document.querySelector(".main").src= 'assets/images/'+ chaptersObj[chapterName]["img"];
+    document.querySelector(".subtitle").innerHTML = chaptersObj[chapterName]["subtitle"]
+    document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"]
+    document.querySelector(".main").src = 'assets/images/' + chaptersObj[chapterName]["img"];
     document.querySelector(".buttons").innerHTML = ""
-     
-    for(i in chaptersObj[chapterName].options) {
+
+    for (i in chaptersObj[chapterName].options) {
         const button = document.createElement("button");
         button.setAttribute("class", "option");
-        button.setAttribute("onclick",  chaptersObj[chapterName].options[i].action);
+        button.setAttribute("onclick", chaptersObj[chapterName].options[i].action);
         const buttonText = document.createTextNode(chaptersObj[chapterName].options[i].optionText);
         button.appendChild(buttonText);
         const daddy = document.querySelector(".buttons");
@@ -114,15 +116,15 @@ function goToChapter(chapterName) {
 
 let codeFound = false;
 
-function cat(){
+function cat() {
     codeFound = true;
     goToChapter("intro")
 }
 
-function codeCam(){
-    if(codeFound==true){
+function codeCam() {
+    if (codeFound == true) {
         goToChapter("code")
-    }else{
+    } else {
         goToChapter("pasCode")
     }
 }
