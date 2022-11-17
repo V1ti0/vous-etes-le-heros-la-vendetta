@@ -131,10 +131,11 @@ function goToChapter(chapterName) {
 
 }
 
-let codeFound = false;
+let codeFound = Boolean("Code", false);
 
 function cat() {
-    codeFound = true;
+    localStorage.setItem("Code", true);
+    codeFound = Boolean("Code");
     goToChapter("intro")
 }
 
