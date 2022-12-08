@@ -82,6 +82,21 @@ video {
     display: none;
 }
 
+.check {
+    display: flex;
+    width: 100%;
+}
+
+.audio {
+    display: flex;
+    margin-left: 5%;
+    transform: scale(2);
+}
+
+.mute {
+    accent-color: #000814;
+}
+
 .fiangaso .game {
     background-color: #ce9e00;
     transition: background-color 0.25s ease-out
