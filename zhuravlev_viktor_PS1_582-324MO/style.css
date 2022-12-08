@@ -4,7 +4,8 @@
     margin: 0;
 }
 
-html {
+html,
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,4 +80,24 @@ video {
 
 .video {
     display: none;
+}
+
+.fiangaso .game {
+    background-color: #ce9e00;
+    transition: background-color 0.25s ease-out
+}
+
+.appasiliarco .game {
+    background-color: #111111;
+    transition: background-color 0.25s ease-out
+}
+
+.calciago .game {
+    background-color: #35011d;
+    transition: background-color 0.25s ease-out
+}
+
+.hasCode .game {
+    background-color: #a53c00;
+    transition: background-color 0.25s ease-out
 }

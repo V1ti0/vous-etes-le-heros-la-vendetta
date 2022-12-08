@@ -7,6 +7,7 @@ let chaptersObj = {
             { optionText: "Accuser Calciago", action: "goToChapter('calciago')" },
             { optionText: "Accuser Appasiliarco", action: "goToChapter('appasiliarco')" },
             { optionText: "Accuser Fiangaso", action: "goToChapter('fiangaso')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
     calciago: {
@@ -16,6 +17,7 @@ let chaptersObj = {
         options: [
             { optionText: "Ne rien dire", action: "goToChapter('silenceCalciago')" },
             { optionText: "L'accuser", action: "goToChapter('accuserCalciago')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -24,7 +26,8 @@ let chaptersObj = {
         text: "Trouvant votre silence supsicieux, les membres de votre équipes finient par vous accuser. Ne savant pas qui choisir entre vous et Calciago, ils vous tueunt tout les deux",
         img: "execution.png",
         options: [
-            { optionText: "Recommencer", action: "goToChapter('intro')" }
+            { optionText: "Recommencer", action: "goToChapter('intro')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
     accuserCalciago: {
@@ -32,7 +35,8 @@ let chaptersObj = {
         text: "Les membres de l'équipe vous tuent, car ils trouvent l'accusation trop bizarre et brusque. Vous recevez cependant un papier contenant le code de la caméra de sécurité grâce à votre sacrifice, ce qui vous sera utile dans vos prochaines manches.",
         img: "execution.png",
         options: [
-            { optionText: "Recommencer", action: "cat()" }
+            { optionText: "Recommencer", action: "cat()" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -42,7 +46,8 @@ let chaptersObj = {
         img: "appasiliarco.jpg",
         options: [
             { optionText: "Oui", action: "codeCam()" },
-            { optionText: "Non", action: "goToChapter('pasCode')" }
+            { optionText: "Non", action: "goToChapter('pasCode')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -53,7 +58,8 @@ let chaptersObj = {
         img: "main_page.png",
         video: "sunrise.mp4",
         options: [
-            { optionText: "Recommencer", action: "goToChapter('intro')" }
+            { optionText: "Recommencer", action: "goToChapter('intro')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -63,7 +69,8 @@ let chaptersObj = {
         img: "execution.png",
         video: "execution_video.mp4",
         options: [
-            { optionText: "Recommencer", action: "goToChapter('intro')" }
+            { optionText: "Recommencer", action: "goToChapter('intro')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -73,7 +80,8 @@ let chaptersObj = {
         img: "fiangaso.jpg",
         options: [
             { optionText: "Oui", action: "goToChapter('accuserFiangaso')" },
-            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" }
+            { optionText: "Non", action: "goToChapter('pasCodeFiangaso')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
     accuserFiangaso: {
@@ -82,7 +90,8 @@ let chaptersObj = {
         img: "proposer.png",
         options: [
             { optionText: "Oui", action: "codeCam()" },
-            { optionText: "Non", action: "goToChapter('pasCode')" }
+            { optionText: "Non", action: "goToChapter('pasCode')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
     pasCodeFiangaso: {
@@ -90,7 +99,8 @@ let chaptersObj = {
         text: "Malheureusement, les membres de votre équipe vous soupsonne, car ils pensent que l'arme était un prétext pour tourner les soupsons contre Fiangaso. Il finissent par vous éxecuter.",
         img: "execution.png",
         options: [
-            { optionText: "Recommencer", action: "goToChapter('intro')" }
+            { optionText: "Recommencer", action: "goToChapter('intro')" },
+            { optionText: "Effacer la partie", action: "reset()" },
         ]
     },
 
@@ -99,13 +109,21 @@ let chaptersObj = {
 
 
 function goToChapter(chapterName) {
+    let checkbox = document.querySelector("[type='checkbox']");
+    let volumeOn = checkbox.checked
+    if (volumeOn == true) {
+        var audio = new Audio('assets/images/fx.mp3');
+        audio.currentTime = 0;
+        audio.play();
+    }
+
+
     console.log(chaptersObj[chapterName]["subtitle"]);
     console.log(chaptersObj[chapterName]["text"]);
     document.querySelector(".subtitle").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
     document.querySelector(".buttons").innerHTML = "";
-    var audio = new Audio('assets/images/fx.mp3');
-    audio.play();
+
 
     localStorage.setItem("name", [chapterName]);
 
@@ -128,7 +146,8 @@ function goToChapter(chapterName) {
         daddy.appendChild(button);
     }
 
-
+    let body = document.querySelector("body");
+    body.setAttribute("class", [chapterName]);
 }
 
 let codeFound = localStorage.setItem("Code", "false");
