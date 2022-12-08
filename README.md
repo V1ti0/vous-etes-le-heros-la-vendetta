@@ -10,4 +10,4 @@
 
 ## Diagramme
 
-![diagramme](/zhuravlev_viktor_PS1_582-324MO/assets/drawio/schema-2)
+![diagramme](/assets/drawio/schema-2)
