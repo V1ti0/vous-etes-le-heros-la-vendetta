@@ -1,0 +1,118 @@
+/* Colors: #000814 , #001d3d, #003566, #ffc300, #ffd60a */
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000814;
+}
+
+.game {
+    min-width: 400px;
+    max-width: 900px;
+    min-height: 100px;
+    background-color: #001d3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    font-family: 'Qwitcher Grypen', cursive;
+    font-size: 130px;
+    color: white;
+}
+
+.subtitle {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 35px;
+}
+
+.text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    margin: 20px;
+    color: white;
+}
+
+.main {
+    min-width: 20vw;
+    max-width: 300px;
+    padding-bottom: 40px;
+}
+
+img {
+    max-width: 300px;
+}
+
+video {
+    max-width: 300px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.option {
+    background-color: #ffd60a;
+    padding: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-out
+}
+
+.option:hover {
+    background-color: #ce9e00;
+    cursor: pointer;
+}
+
+.video {
+    display: none;
+}
+
+.check {
+    display: flex;
+    width: 100%;
+}
+
+.audio {
+    display: flex;
+    margin-left: 5%;
+    transform: scale(2);
+}
+
+.mute {
+    accent-color: #000814;
+}
+
+.fiangaso .game {
+    background-color: #ce9e00;
+    transition: background-color 0.25s ease-out
+}
+
+.appasiliarco .game {
+    background-color: #111111;
+    transition: background-color 0.25s ease-out
+}
+
+.calciago .game {
+    background-color: #35011d;
+    transition: background-color 0.25s ease-out
+}
+
+.hasCode .game {
+    background-color: #a53c00;
+    transition: background-color 0.25s ease-out
+}
