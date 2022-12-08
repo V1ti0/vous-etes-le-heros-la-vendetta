@@ -179,11 +179,12 @@ function start() {
     }
 }
 
+window.addEventListener("load", (event) => {
+    start();
+});
 
 function reset() {
     goToChapter("intro")
     codeFound = false
     localStorage.removeItem("Code");
 };
-
-start()
