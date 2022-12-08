@@ -160,4 +160,11 @@ function start() {
     }
 }
 
+
+function reset() {
+    goToChapter("intro")
+    codeFound = false
+    localStorage.removeItem("Code");
+};
+
 start()
