@@ -10,4 +10,4 @@
 
 ## Diagramme
 
-![diagramme](/assets/drawio/schema-2)
+![diagramme](assets/drawio/schema-2)
